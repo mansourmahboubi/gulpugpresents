@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from pug.views import helloworld
+# from pug.views import helloworld
+from pug import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', helloworld),
+    # path('', helloworld),
+    path('', views.homepage),
 ]
