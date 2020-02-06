@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Guilan Pug</title>
     <style>
         body {
             background-image: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%);
@@ -33,14 +33,21 @@
         <div class="container">
             <div class="row">
                 <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Intro to python 1</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-                        <p class="card-text">He told us about python concepts and history.</p>
-                        <a href="#" class="card-link">Presentaion link</a>
-                        <a href="#" class="card-link">Author link</a>
+                    <div class="card-body" style="text-align: center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="python" />
                     </div>
                 </div>
+                {% for item in presentations %}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}} - Session {{item.id}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{item.presenter}}</h6>
+                        <p class="card-text">{{item.descripton}}</p>
+                        <a href="{{item.presentaion_link}}" class="card-link">Presentaion link</a>
+                        <a href="{{item.author_link}}" class="card-link">Author link</a>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

@@ -21,5 +21,5 @@ from pug import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', helloworld),
-    path('', views.homepage),
+    path('', views.presentation_homepage),
 ]
